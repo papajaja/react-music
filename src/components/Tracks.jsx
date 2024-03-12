@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Loading from "./Loading";
 import $api from "../api/api";
 import Track from "./Track";
+import "../styles/tracks.scss";
 
 export default function Tracks() {
   const [tracks, setTracks] = useState([]);
@@ -16,15 +17,15 @@ export default function Tracks() {
   useEffect(() => {
     setTimeout(() => {
       loadTracks();
-    }, 200);
+    }, 1000);
   }, []);
 
   return (
     <>
       {!isLoading ? (
         <div className="tracks">
-          {tracks.map((track) => (
-            <Track key={track.track_id} track_id={track.track_id} author={track.author} name={track.name}></Track>
+          {tracks.map((track, index) => (
+            <Track index={index + 1} key={track.track_id} track_id={track.track_id} author={track.author} name={track.name}></Track>
           ))}
         </div>
       ) : (

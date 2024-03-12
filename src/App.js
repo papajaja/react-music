@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from "react";
-import $api from "./api/api";
-import "./app.css";
+import "./app.scss";
 import Tracks from "./components/Tracks";
 import { observer } from "mobx-react";
 import CurrentTrack from "./store/CurrentTrack";
 import Player from "./components/Player";
+import NavigateMenu from "./components/NavigateMenu";
+import MainMenu from "./components/MainMenu";
 
 const App = observer(() => {
   return (
     <div className="app">
-      <Tracks></Tracks>
+      <div className="workspace">
+        <NavigateMenu></NavigateMenu>
+        <MainMenu>
+          <Tracks></Tracks>
+        </MainMenu>
+      </div>
+
       {CurrentTrack.id ? <Player></Player> : null}
     </div>
   );

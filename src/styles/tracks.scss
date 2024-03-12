@@ -1,0 +1,62 @@
+@import "./variables.scss";
+
+.tracks {
+  padding: $pad_gin;
+}
+
+.track {
+  width: auto;
+  margin: $pad_gin;
+  height: 40px;
+  display: flex;
+  // border: 1px solid black;
+  // flex-direction: column;
+  padding: 3px;
+  border-radius: 10px;
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+    user-select: none;
+    background-color: rgba(255, 255, 255, 0.219);
+  }
+}
+
+.track__index {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.track__picture {
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(to bottom right, blue, green);
+  margin-left: 15px;
+  border-radius: 3px;
+}
+
+.track__info {
+  margin-left: 10px;
+}
+
+.track-name {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.track-author {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.track-resume {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  margin-right: 150px;
+  // background-color: red;
+  // background-size: 30px;
+}

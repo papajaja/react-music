@@ -1,0 +1,9 @@
+@import "./variables.scss";
+
+.mainmenu {
+  background-color: $bg_clr;
+  width: 80%;
+  margin-left: $pad_gin;
+  border-radius: $bor_dius;
+  color: white;
+}
