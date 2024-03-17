@@ -1,0 +1,83 @@
+.player__settings {
+  button {
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    border: none;
+    // transition: all 0.4s linear;
+    &:hover {
+      filter: brightness(180%);
+    }
+  }
+
+  .player__play {
+    background: url("../../icons/player/center/play.svg") center center no-repeat;
+    // background-size: 35px;
+    // background-color: red;
+  }
+  .player__pause {
+    width: 30px;
+    height: 30px;
+    background: url("../../icons/player/center/pause.svg");
+  }
+  .player__next {
+    margin-left: 5px;
+    background: url("../../icons/player/center/next.svg");
+  }
+  .player__prev {
+    margin-right: 5px;
+    background: url("../../icons/player/center/prev.svg");
+  }
+  .player__volume0 {
+    background: url("../../icons/player/left/volume0.svg") center center no-repeat;
+    margin-left: 20px;
+    background-size: 25px;
+  }
+  .player__volume1 {
+    background: url("../../icons/player/left/volume1.svg") center center no-repeat;
+    margin-left: 20px;
+    background-size: 25px;
+  }
+  .player__volume2 {
+    background: url("../../icons/player/left/volume2.svg") center center no-repeat;
+    margin-left: 20px;
+    background-size: 25px;
+  }
+  .player__volume3 {
+    background: url("../../icons/player/left/volume3.svg") center center no-repeat;
+    margin-left: 20px;
+    background-size: 25px;
+  }
+  .player__mix {
+    margin-right: 5px;
+    background: url("../../icons/player/center/mix.svg");
+    background-size: 35px;
+    // background-color: red;
+  }
+  .player__repeat {
+    background: url("../../icons/player/center/repeat.svg");
+    background-size: 35px;
+    margin-left: 5px;
+  }
+  .player__queue {
+    background: url("../../icons/player/right/queue.svg");
+  }
+  .player__miniplayer {
+    background: url("../../icons/player/right/miniplayer.svg");
+  }
+  .player__like {
+    background: url("../../icons/player/left/like.svg");
+  }
+  .player__screen {
+    background: url("../../icons/player/right/screen.svg");
+  }
+  .player__unlike {
+    background: url("../../icons/player/left/unlike.svg");
+  }
+  .player__add {
+    background: url("../../icons/player/left/add.svg");
+  }
+  .player__fullscreen {
+    background: url("../../icons/player/right/fullscreen.svg");
+  }
+}

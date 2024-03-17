@@ -39,17 +39,17 @@
   margin-left: 10px;
 }
 
-.track-name {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.track-author {
+.track__name {
   font-family: "Courier New", Courier, monospace;
   font-weight: 600;
   font-size: 15px;
   color: rgba(255, 255, 255, 0.9);
+}
+
+.track__author {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .track-resume {

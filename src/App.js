@@ -6,18 +6,23 @@ import CurrentTrack from "./store/CurrentTrack";
 import Player from "./components/Player";
 import NavigateMenu from "./components/NavigateMenu";
 import MainMenu from "./components/MainMenu";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LayOut from "./components/LayOut";
+import PageNotFound from "./components/PageNotFound";
+import PlaylistMenu from "./components/PlaylistMenu";
 
 const App = observer(() => {
   return (
     <div className="app">
-      <div className="workspace">
-        <NavigateMenu></NavigateMenu>
-        <MainMenu>
-          <Tracks></Tracks>
-        </MainMenu>
-      </div>
-
-      {CurrentTrack.id ? <Player></Player> : null}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LayOut />}>
+            <Route index element={<MainMenu />} />
+            <Route path="playlist/:id" element={<PlaylistMenu />} />
+          </Route>
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 });

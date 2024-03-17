@@ -1,4 +1,4 @@
-import "../styles/mainmenu.scss";
+import "../styles/Menus.scss";
 
 const MainMenu = ({ children }) => {
   return <div className="mainmenu">{children}</div>;

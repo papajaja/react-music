@@ -5,8 +5,6 @@ class CurrentTrack {
   id = null;
   author = null;
   name = null;
-  isLoaded = false;
-  isPaused = true;
 
   constructor() {
     makeAutoObservable(this);
@@ -18,16 +16,6 @@ class CurrentTrack {
     this.author = author;
     this.name = name;
   }
-
-  switchIsLoaded() {
-    this.isLoaded = !this.isLoaded;
-  }
-
-  switchIsPaused() {
-    this.isPaused = !this.isPaused;
-  }
-
-
 }
 
 export default new CurrentTrack();

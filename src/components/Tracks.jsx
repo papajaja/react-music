@@ -17,7 +17,7 @@ export default function Tracks() {
   useEffect(() => {
     setTimeout(() => {
       loadTracks();
-    }, 1000);
+    }, 10);
   }, []);
 
   return (
@@ -25,7 +25,7 @@ export default function Tracks() {
       {!isLoading ? (
         <div className="tracks">
           {tracks.map((track, index) => (
-            <Track index={index + 1} key={track.track_id} track_id={track.track_id} author={track.author} name={track.name}></Track>
+            <Track index={index + 1} key={track.id} track_id={track.id} author={track.author} title={track.title}></Track>
           ))}
         </div>
       ) : (

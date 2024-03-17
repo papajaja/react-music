@@ -1,6 +1,6 @@
 import PlaylistsMenu from "./PlaylistsMenu";
 import SearchMenu from "./SearchMenu";
-import "../styles/navigatemenu.scss";
+import "../styles/Menus.scss";
 
 const NavigateMenu = () => {
   return (
