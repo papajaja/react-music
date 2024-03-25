@@ -3,30 +3,21 @@
 .mainmenu {
   background-color: $bg_clr;
   width: 80%;
-  // margin-left: $pad_gin;
+  margin-left: $pad_gin;
   border-radius: $bor_dius;
   color: white;
+  overflow: auto;
   min-width: 400px;
 }
 
-.navigatemenu {
+.sidemenu {
   color: white;
-  height: auto;
   width: 25vw;
   display: flex;
   flex-direction: column;
   min-width: 200px;
   height: 100%;
   // background-color: red;
-}
-
-.playlistsmenu {
-  // margin-top: $pad_gin;
-  // margin-left: 8px;
-  background-color: $bg_clr;
-  flex-grow: 1;
-  width: 100%;
-  border-radius: $bor_dius;
 }
 
 .searchmenu {
@@ -56,7 +47,6 @@
       text-shadow: 0 0 2px 2px red;
       cursor: pointer;
     }
-    
   }
   .searchmenu__homeicon,
   .searchmenu__searchicon {

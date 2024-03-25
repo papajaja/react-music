@@ -1,0 +1,49 @@
+.mainContainer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  // background-color: red;
+}
+
+.mainImage {
+  width: 130px;
+  height: 130px;
+  background-repeat: no-repeat;
+  min-height: 130px;
+  border-radius: 8px;
+  background-position: center center;
+}
+
+.mainPlaylist {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  width: 150px;
+  text-decoration: none;
+  margin: 10px 0 0 10px;
+  color: white;
+  font-size: 16px;
+  overflow: hidden;
+  // border: 1px solid white;
+  padding: 10px;
+  border-radius: 10px;
+  height: 200px;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+}
+
+.mainName {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mainDesc {
+  font-size: 10px;
+  // max-height: 20px;
+  height: 30px;
+  overflow: hidden;
+  // background-color: red;
+}

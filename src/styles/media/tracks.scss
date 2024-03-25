@@ -1,0 +1,84 @@
+@import "../variables.scss";
+
+.tracks {
+  padding: $pad_gin;
+}
+
+.track,
+.trackHeader {
+  margin: $pad_gin;
+  height: 38px;
+  padding: 4px;
+  border-radius: 3px;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+}
+
+.track {
+  &:hover {
+    cursor: pointer;
+    user-select: none;
+    background-color: rgba(255, 255, 255, 0.219);
+  }
+}
+
+.trackIndex {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  color: lightgray;
+}
+
+.trackPicture {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, rgb(142, 142, 182), rgb(66, 75, 66));
+  margin-left: 10px;
+  border-radius: 3px;
+}
+
+.trackInfo {
+  margin-left: 10px;
+  color: lightgray;
+  font-size: 14px;
+}
+
+.trackName {
+  font-weight: 600;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.trackAuthor {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.trackDuration {
+  margin-left: auto;
+  text-align: center;
+  width: 40px;
+  color: lightgray;
+  font-size: 14px;
+}
+
+.trackDetails {
+  display: flex;
+  align-items: center;
+  width: 55%;
+}
+
+.trackAlbum {
+  font-size: 14px;
+  // text-align: center;
+  color: lightgray;
+  display: flex;
+  align-items: center;
+  // background-color: red;
+  width: 25%;
+  height: 100%;
+}

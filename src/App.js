@@ -1,29 +1,25 @@
-import React, { useState, useEffect } from "react";
-import "./app.scss";
-import Tracks from "./components/Tracks";
-import { observer } from "mobx-react";
-import CurrentTrack from "./store/CurrentTrack";
-import Player from "./components/Player";
-import NavigateMenu from "./components/NavigateMenu";
-import MainMenu from "./components/MainMenu";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LayOut from "./components/LayOut";
-import PageNotFound from "./components/PageNotFound";
-import PlaylistMenu from "./components/PlaylistMenu";
+import { observer } from "mobx-react";
+import "./styles/app.scss";
+import MainPage from "./components/views/MainPage";
+import Wrapper from "./components/Wrapper";
+import PageNotFound from "./components/views/PageNotFound";
+import PlayListPage from "./components/views/PlaylistPage";
 
 const App = observer(() => {
   return (
-    <div className="app">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<LayOut />}>
-            <Route index element={<MainMenu />} />
-            <Route path="playlist/:id" element={<PlaylistMenu />} />
-          </Route>
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Wrapper />}>
+          <Route index element={<MainPage />} />
+          <Route path="playlist/:id" element={<PlayListPage />} />
+          {/* <Route path="author/:id" element={<PlaylistMenu />} /> */}
+          {/* <Route path="settings" element={<PlaylistMenu />} /> */}
+        </Route>
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 });
 

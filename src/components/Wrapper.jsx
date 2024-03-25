@@ -1,17 +1,15 @@
 import CurrentTrack from "../store/CurrentTrack";
-import MainMenu from "./MainMenu";
-import NavigateMenu from "./NavigateMenu";
-import Player from "./Player";
+import Player from "./player/Player";
 import { Outlet } from "react-router-dom";
-import "../styles/layout.scss";
 import { observer } from "mobx-react";
+import "../styles/wrapper.scss";
+import SideMenu from "./SideMenu";
 
 const LayOut = observer(() => {
   return (
-    <div className="layout">
-      <div className="workspace">
-        <NavigateMenu></NavigateMenu>
-        <div>hi</div>
+    <div className="wrapper">
+      <div className="content">
+        <SideMenu />
         <Outlet />
       </div>
 

@@ -1,17 +1,16 @@
 @import "./variables.scss";
 
-.layout {
+.wrapper {
   width: 100vw;
   height: 100vh;
-  // background-color: red;
   display: flex;
   position: fixed;
   flex-direction: column;
   background-color: $ctx_clr;
-  overflow: auto;
+  overflow: hidden;
 }
 
-.workspace {
+.content {
   flex-grow: 1;
   padding: $pad_gin;
   display: flex;
