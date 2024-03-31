@@ -1,0 +1,62 @@
+@import "../variables.scss";
+
+.albummenu {
+  overflow: auto;
+  padding-top: $hb_height;
+}
+
+.albummenuview {
+  display: flex;
+}
+
+.albummenupicture {
+  margin: $hb_height 30px 10px 30px;
+  img {
+    width: 150px;
+    height: 150px;
+    // border-radius: 50%;
+    border-radius: 3px;
+  }
+}
+
+.albummenuinfo {
+  // background-color: red;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.albummenualbum {
+  font-size: 14px;
+}
+
+.albummenuname {
+  font-size: 50px;
+  font-weight: 600;
+  margin-left: -4px;
+}
+
+.albummenuartists {
+  margin-bottom: 10px;
+}
+
+.albums {
+  display: flex;
+  gap: 15px;
+  max-width: 100%;
+  flex-wrap: wrap;
+  margin-left: 40px;
+}
+.album {
+  max-width: 150px;
+  font-size: 14px;
+  // color: white;
+}
+
+.albumpicture {
+  overflow: hidden;
+}
+
+.albumname {
+}

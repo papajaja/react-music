@@ -2,18 +2,24 @@ import CurrentTrack from "../store/CurrentTrack";
 import Player from "./player/Player";
 import { Outlet } from "react-router-dom";
 import { observer } from "mobx-react";
-import "../styles/wrapper.scss";
-import SideMenu from "./SideMenu";
+import "./wrapper.scss";
+import NavMenu from "./navigation/NavMenu";
+import HeadBar from "./HeadBar";
 
 const LayOut = observer(() => {
   return (
     <div className="wrapper">
       <div className="content">
-        <SideMenu />
-        <Outlet />
+        <NavMenu />
+        <div className="mainmenucontainer">
+          <HeadBar></HeadBar>
+          <div className="mainmenu">
+            <Outlet />
+          </div>
+        </div>
       </div>
 
-      {CurrentTrack.id ? <Player></Player> : null}
+      {CurrentTrack.name ? <Player></Player> : null}
     </div>
   );
 });

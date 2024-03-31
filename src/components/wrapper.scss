@@ -1,0 +1,52 @@
+@import "./variables.scss";
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  background-color: $ctx_clr;
+  overflow: hidden;
+  // max-width: 1500px;
+}
+
+.content {
+  flex-grow: 1;
+  // padding: $pad_gin;
+  display: flex;
+  overflow: auto;
+}
+
+.mainpage {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  // max-height: 240px;
+  flex-wrap: wrap;
+  overflow: auto;
+  padding-top: $hb_height * 2;
+  // margin-top: $hb_height;
+}
+
+.mainmenucontainer {
+  height: 100%;
+  width: 77vw;
+  overflow: hidden;
+  padding: $pad_gin;
+  position: relative;
+}
+
+.mainmenu {
+  background-color: $bg_clr;
+  position: relative;
+  // width: 100vw;
+  height: 100%;
+  border-radius: $bor_dius;
+  color: white;
+  min-width: 400px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: $bg_shw;
+}

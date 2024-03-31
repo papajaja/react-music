@@ -1,4 +1,14 @@
-@import "./variables.scss";
+@import "../components/album/album.scss";
+@import "../components/track/track.scss";
+@import "../components/artist/artist.scss";
+@import "../components/navigation/mediateka.scss";
+@import "../components/player/player.scss";
+@import "../components/playlist/playlist.scss";
+@import "../components/views/mainplaylist.scss";
+@import "../components/wrapper.scss";
+@import "../components/headbar.scss";
+@import "../components/navigation/navmenu.scss";
+@import "../components/player/progressbar.scss";
 
 * {
   box-sizing: border-box;
@@ -13,6 +23,7 @@ button {
   }
 }
 
-.no-link {
+a {
   text-decoration: none;
+  color: white;
 }

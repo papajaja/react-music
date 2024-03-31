@@ -1,12 +1,17 @@
 import { observer } from "mobx-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CurrentTrack from "../../store/CurrentTrack";
-import "../../styles/player/player.scss";
 import ProgressBar from "./ProgressBar";
 
 const Player = observer(() => {
   const [isPaused, setIsPaused] = useState(CurrentTrack.audio.paused);
   const [volume, setVolume] = useState(CurrentTrack.audio.volume);
+
+  useEffect(() => {
+    if (CurrentTrack.audio.paused) {
+      setIsPaused(true);
+    }
+  }, [CurrentTrack.audio]);
 
   const Resume = () => {
     isPaused ? CurrentTrack.audio.play() : CurrentTrack.audio.pause();
@@ -25,10 +30,12 @@ const Player = observer(() => {
 
         <div className="playerSettings">
           <div className="playerLeft">
-            <div className="playerPicture"></div>
+            <div className="playerPicture">
+              <img width="40px" src={CurrentTrack.picture} alt="Track" />
+            </div>
             <div className="playerTrackinfo">
-              <div className="playerName">{CurrentTrack.title_m}</div>
-              <div className="playerAuthor">{CurrentTrack.author_m}</div>
+              <div className="playerName">{CurrentTrack.name}</div>
+              <div className="playerAuthor">{CurrentTrack.artists}</div>
             </div>
           </div>
 

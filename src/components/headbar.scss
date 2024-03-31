@@ -1,0 +1,18 @@
+@import "./variables.scss";
+
+.headbarcontainer {
+  height: $hb_height;
+  width: 77vw;
+  margin-left: -$pad_gin;
+  z-index: 10;
+  position: fixed;
+  // max-width: 1200px;
+  padding: 0 $pad_gin 0 $pad_gin;
+}
+
+.headbar {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: $bor_dius $bor_dius 0 0;
+  height: 100%;
+  width: 100%;
+}

@@ -1,0 +1,76 @@
+.playerSettings {
+  button {
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    border: none;
+    filter: brightness(150%);
+    &:hover {
+      filter: brightness(180%);
+    }
+  }
+
+  .playerPlay {
+    background: url("../../icons/player/play.svg") center center no-repeat;
+    background-size: 35px;
+    margin: 3px;
+  }
+
+  .playerPause {
+    background: url("../../icons/player/pause.svg") center center no-repeat;
+    background-size: 47px;
+    margin: 3px;
+  }
+  .playerNext {
+    background: url("../../icons/player/next.svg") center center no-repeat;
+    background-size: 28px;
+  }
+  .playerPrev {
+    background: url("../../icons/player/prev.svg") center center no-repeat;
+    background-size: 28px;
+  }
+  .playerVolume0 {
+    background: url("../../icons/player/volume0.svg") center center no-repeat;
+    background-size: 25px;
+  }
+  .playerVolume1 {
+    background: url("../../icons/player/volume1.svg") center center no-repeat;
+    background-size: 25px;
+  }
+  .playerVolume2 {
+    background: url("../../icons/player/volume2.svg") center center no-repeat;
+    background-size: 25px;
+  }
+  .playerMix {
+    margin-right: 5px;
+    background: url("../../icons/player/mix.svg");
+    background-size: 35px;
+    // background-color: red;
+  }
+  .playerRepeat {
+    background: url("../../icons/player/repeat.svg");
+    background-size: 35px;
+    margin-left: 5px;
+  }
+  .playerQueue {
+    background: url("../../icons/player/queue.svg");
+  }
+  .playerMiniplayer {
+    background: url("../../icons/player/miniplayer.svg");
+  }
+  .playerLike {
+    background: url("../../icons/player/like.svg");
+  }
+  .playerScreen {
+    background: url("../../icons/player/screen.svg");
+  }
+  .playerUnlike {
+    background: url("../../icons/player/unlike.svg");
+  }
+  .playerAdd {
+    background: url("../../icons/player/add.svg");
+  }
+  .playerFullscreen {
+    background: url("../../icons/player/fullscreen.svg");
+  }
+}

@@ -1,35 +1,25 @@
 import { makeAutoObservable } from "mobx";
 
 class CurrentTrack {
-  maxLen = 22;
   audio = null;
-  id = null;
-  author = null;
-  title = null;
-  author_m = null;
-  title_m = null;
+  name = null;
+  artists = null;
+  picture = null;
 
   constructor() {
     makeAutoObservable(this);
   }
 
-  setAudio(audio, id, author, title) {
-    this.audio = audio;
-    this.id = id;
-    this.author = author;
-    this.title = title;
-    if (title.length > this.maxLen) {
-      this.title_m = title.slice(0, this.maxLen);
-      this.title_m += "...";
-    } else {
-      this.title_m = title;
+  async setTrack(href, name, artists, picture) {
+    if (this.audio) {
+      this.audio.pause();
     }
-    if (author.length > this.maxLen) {
-      this.author_m = author.slice(0, this.maxLen);
-      this.author_m += "...";
-    } else {
-      this.author_m = author;
-    }
+    this.audio = new Audio(href);
+    this.name = name;
+    this.artists = artists;
+    this.picture = picture;
+    this.audio.currentTime = 0;
+    this.audio.play();
   }
 }
 

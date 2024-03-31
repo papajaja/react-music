@@ -1,0 +1,124 @@
+@import "../variables.scss";
+
+.tracks {
+  padding: $pad_gin;
+}
+
+.track {
+  margin: $pad_gin;
+  height: 38px;
+  padding: 4px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  filter: brightness(2px);
+  &:hover {
+    cursor: pointer;
+    user-select: none;
+    background-color: rgba(255, 255, 255, 0.219);
+  }
+}
+
+.trackheader {
+  height: 38px;
+  margin: 0 12px 0 12px;
+  padding: 12px 0 12px 0;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  color: lightgray;
+}
+
+.trackDetails {
+  display: flex;
+  width: 40%;
+  overflow: hidden;
+  align-items: center;
+  // background-color: red;
+}
+
+.trackIndex {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  color: lightgray;
+}
+
+.trackPicture {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, rgb(142, 142, 182), rgb(66, 75, 66));
+  margin-left: 10px;
+  border-radius: 3px;
+}
+
+.trackInfo {
+  margin-left: 10px;
+  width: 100%;
+  font-size: 14px;
+  max-width: 70%;
+}
+
+.trackname {
+  font-weight: 600;
+  // display: flex;
+  text-wrap: nowrap;
+  // flex-wrap: nowrap;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.trackartists {
+  display: flex;
+  // background-color: red;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  span {
+    margin-right: 5px;
+    color: lightgray;
+    font-size: 12px;
+  }
+}
+
+.trackartist {
+  text-wrap: nowrap;
+  overflow: hidden;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  &:hover {
+    // color: white;
+    text-decoration: underline;
+  }
+}
+
+.trackDuration {
+  margin-left: auto;
+  text-align: center;
+  width: 40px;
+  // background-color: blue;
+  color: lightgray;
+  font-size: 14px;
+}
+
+.trackalbum,
+.trackalbum_h {
+  font-size: 14px;
+  // text-align: center;
+  color: lightgray;
+  display: flex;
+  align-items: center;
+  // background-color: green;
+  // width: 40%;
+  height: 100%;
+}
+.trackalbum {
+  &:hover {
+    text-decoration: underline;
+  }
+}

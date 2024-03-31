@@ -1,15 +1,9 @@
 import axios from "axios";
-// const API_URL = "http://localhost:8080";
 var clientId = "419f99d845da4e6180b795dc9e3d2ab0";
 var clientSecret = "2c3902e16462472dbf3bf1e056705857";
 var baseUrl = "https://api.spotify.com/v1";
 
-// var clientSecret = "";
-// var clientId = "";
-// var baseUrl = "";
-
 const $api = axios.create({
-  // withCredentials: true,
   baseURL: baseUrl,
 });
 
@@ -19,12 +13,15 @@ $api.interceptors.request.use((config) => {
 });
 
 $api.interceptors.response.use(
-  (config) => config,
+  (config) => {
+    console.log("$api -> interceptors -> reponse -> success", config.data);
+    return config;
+  },
   async (error) => {
     const originalRequest = error.config;
     if (error.response.status === 401) {
       try {
-        console.warn("Token update...");
+        console.warn("Token updating...");
         const response = await axios.post(
           "https://accounts.spotify.com/api/token",
           { grant_type: "client_credentials" },
@@ -33,11 +30,12 @@ $api.interceptors.response.use(
           }
         );
         localStorage.setItem("token", response.data.access_token);
-        $api.request(originalRequest);
+        return $api.request(originalRequest);
       } catch (error) {
         console.log("$api -> interceptors -> error", error);
       }
     }
+    console.warn("api -> interceptors -> response -> error", error.code, error.response.status, error.response.data.error);
   }
 );
 

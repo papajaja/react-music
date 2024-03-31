@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "../../styles/player/progressbar.scss";
 import CurrentTrack from "../../store/CurrentTrack";
 import { observer } from "mobx-react-lite";
 
@@ -17,6 +16,11 @@ const ProgressBar = () => {
     const progressTime = document.querySelector(".progressTime");
     progressTime.style.display = "none";
   };
+
+  useEffect(() => {
+    setProgress(0);
+    CurrentTrack.audio.currentTime = 0;
+  }, [CurrentTrack.audio]);
 
   const updateArea = (event) => {
     const progress = document.querySelector(".progress");
