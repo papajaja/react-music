@@ -2,7 +2,7 @@ import CurrentUser from "../store/CurrentUser";
 
 const url = "https://accounts.spotify.com/api/token";
 const clientId = "419f99d845da4e6180b795dc9e3d2ab0";
-const redirectUri = "http://localhost:3000/login";
+const redirectUri = "https://papajaja.github.io/react-music/";
 
 class AuthService {
   static generateRandomString(length) {

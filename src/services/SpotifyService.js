@@ -12,7 +12,9 @@ class SpotifyService {
   }
   async createPlaylist(name, description) {
     try {
-      const response = await $api.post(`users/${CurrentUser.id}/playlists`, { body: { name: name, public: true, collaborative: false, description: description } });
+      const response = await $api.post(`users/${CurrentUser.id}/playlists`, {
+        body: { name: name, public: true, collaborative: false, description: description },
+      });
       return response;
     } catch (error) {
       console.error("SpotifyService -> getUserPlaylists -> error", error);
@@ -36,7 +38,7 @@ class SpotifyService {
   }
   async getFeaturedPlaylists(limit = 32) {
     try {
-      const featuredPlaylists = await $api.get(`browse/featured-playlists?limit=${limit}`);
+      const featuredPlaylists = await $api.get(`browse/featured-playlists`);
       return featuredPlaylists;
     } catch (error) {
       console.error("SpotifyService -> getFeaturedPlaylists -> error", error);

@@ -1,5 +1,4 @@
 import axios from "axios";
-const clientId = "419f99d845da4e6180b795dc9e3d2ab0";
 const baseUrl = "https://api.spotify.com/v1";
 
 const $api = axios.create({
@@ -13,11 +12,15 @@ $api.interceptors.request.use((config) => {
 
 $api.interceptors.response.use(
   (config) => {
-    // console.log("$api -> interceptors -> reponse -> success", config.data);
     return config;
   },
   async (error) => {
-    console.warn("api -> interceptors -> response -> error", error.code, error.response.status, error.response.data.error);
+    console.warn(
+      "api -> interceptors -> response -> error",
+      error.code,
+      error.response.status,
+      error.response.data.error
+    );
     const originalRequest = error.config;
     if (error.response.status === 401) {
       try {
@@ -28,7 +31,11 @@ $api.interceptors.response.use(
 
         const response = await axios.post(
           "https://accounts.spotify.com/api/token",
-          { grant_type: grant_type, refresh_token: refresh_token, client_id: "419f99d845da4e6180b795dc9e3d2ab0" },
+          {
+            grant_type: grant_type,
+            refresh_token: refresh_token,
+            client_id: "419f99d845da4e6180b795dc9e3d2ab0",
+          },
           {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
           }
