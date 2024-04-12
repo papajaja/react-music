@@ -1,0 +1,11 @@
+.artists_list {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.artist_item {
+  &:hover {
+    text-decoration: underline;
+  }
+}

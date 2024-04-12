@@ -1,58 +1,49 @@
 @import "../variables.scss";
-@import "./buttons.scss";
 
-.playerContainer {
+.player_container {
   width: 100%;
   padding: $pad_gin;
   padding-top: 0;
-  // min-width: 1000px;
+  // min-width: 800px + $pad_gin + 300px;
 }
 
-.playerLeft {
-  margin-top: 6px;
-  width: 33%;
-  // background-color: rgb(49, 91, 138);
+.player {
+  border-radius: 0 0 $bor_dius $bor_dius;
+  // background-image: linear-gradient(90deg, #24243e 0%, #252058 50%, #24243e 100%);
+  background-color: $bg_clr;
+  height: 56px;
+  display: flex;
+  position: relative;
+}
+
+.player_info {
+  width: 33.3%;
   display: flex;
   align-items: center;
+  // background-color: green;
 }
 
-.playerCenter {
-  margin-top: 6px;
-  width: 33%;
+.player_controls {
+  // background-color: rgba(255, 0, 0, 0.486);
+  width: 33.3%;
   display: flex;
   align-items: center;
   justify-content: center;
-  // margin-top: 6px;
-  // background-color: rgb(127, 247, 157);
+  button {
+    &:hover {
+      filter: brightness(170%);
+    }
+  }
 }
 
-.playerRight {
-  margin-top: 6px;
-  width: 34%;
-  // background-color: red;
+.player_settings {
+  width: 33.4%;
   height: 100%;
   display: flex;
   align-items: center;
 }
 
-.player {
-  border-radius: 0 0 $bor_dius $bor_dius;
-  background-color: $bg_clr;
-  height: 60px;
-  // margin-top: -100px;
-  // width: 100%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.playerSettings {
-  display: flex;
-  height: 50px;
-  // align-items: center;
-}
-
-.playerPicture {
+.player_picture {
   margin: 8px 15px 8px 16px;
   border-radius: 3px;
   width: 40px;
@@ -61,8 +52,7 @@
   background: linear-gradient(to bottom right, red, blue);
 }
 
-.playerTrackinfo {
-  // background-color: red;
+.player_track_info {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,58 +60,13 @@
   font-weight: 200;
 }
 
-.playerAuthor {
+.player_author {
   font-size: 13px;
   color: rgba(255, 255, 255, 0.7);
-  // margin-top: 4px;
 }
 
-.playerName {
+.player_name {
   font-weight: 600;
   font-size: 15px;
   color: rgba(255, 255, 255, 0.9);
-}
-
-.volumeContainer {
-  display: flex;
-  align-items: center;
-  // justify-content: center;
-  // background-color: red;
-  .volumeProgress {
-    width: 50px;
-    margin-left: 35px;
-    position: absolute;
-    pointer-events: none;
-    background-color: lightgray;
-    height: 4px;
-    border-radius: 4px;
-  }
-}
-
-.playerVolume {
-  margin-left: 5px;
-  appearance: none;
-  background-color: transparent;
-  width: 50px;
-  // height: 10px;
-  // background-color: white;
-
-  &::-webkit-slider-thumb {
-    appearance: none;
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    margin-top: -3px;
-    border: none;
-    background-color: lightgray;
-  }
-
-  &::-webkit-slider-runnable-track {
-    &:hover {
-      cursor: pointer;
-    }
-    background-color: gray;
-    height: 4px;
-    border-radius: 10px;
-  }
 }

@@ -2,17 +2,113 @@
 
 .headbarcontainer {
   height: $hb_height;
-  width: 77vw;
+  width: calc(100vw - 300px);
   margin-left: -$pad_gin;
   z-index: 10;
   position: fixed;
-  // max-width: 1200px;
   padding: 0 $pad_gin 0 $pad_gin;
 }
 
 .headbar {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px) contrast(70%);
   border-radius: $bor_dius $bor_dius 0 0;
   height: 100%;
+  color: lightgray;
   width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.headbar_curr_user {
+  display: flex;
+  margin-left: auto;
+  margin-right: 15px;
+  align-items: center;
+}
+
+.headbar_username {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.headbar_image {
+  width: 35px;
+  height: 35px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.headbar_plug {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: url("../icons/note.svg") center center no-repeat;
+  background-size: 50%;
+  background-color: lightgray;
+}
+
+.headbar_login {
+  display: flex;
+  margin-left: auto;
+  margin-right: 25px;
+  align-items: center;
+  // border: 1px solid white;
+  outline: 1px solid lightslategray;
+  border-radius: 5px;
+  padding: 5px 8px 5px 8px;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.headbar_context_menu {
+  box-shadow: 0 0 5px lightgray;
+  backdrop-filter: blur(20px) brightness(70%);
+  position: absolute;
+  z-index: 101;
+  width: 120px;
+  margin-left: calc(100% - 120px - $pad_gin * 2 - 5px);
+  border-radius: 10px;
+  margin-top: $hb_height + 10px;
+  color: lightgray;
+  height: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.headbar_btn {
+  background-color: transparent;
+  width: 100%;
+  font-size: 16px;
+  color: lightgray;
+  &:hover {
+    background-color: rgba(173, 216, 230, 0.1);
+  }
+}
+
+.headbar_logout {
+  background-color: transparent;
+  width: 100%;
+  font-size: 16px;
+  color: lightslategray;
+  margin-bottom: 3px;
+  margin-top: auto;
+  &:hover {
+    background-color: rgba(173, 216, 230, 0.1);
+  }
+}
+
+.headbar_search_container {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+.headbar_search {
 }

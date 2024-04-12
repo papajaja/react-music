@@ -1,0 +1,73 @@
+.media_ps {
+  display: flex;
+  // width: 100%;
+  height: 56px;
+  border-radius: 0px;
+  padding: 6px;
+  margin: 2px 5px 0 5px;
+  &:hover {
+    background-color: rgba(211, 211, 211, 0.1);
+    scale: 1.02;
+  }
+}
+
+.media_ps_image {
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  overflow: hidden;
+  border-radius: 5px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.media_ps_plug {
+  width: 44px;
+  height: 44px;
+  background: url("../../icons/note.svg") center center no-repeat;
+  background-size: 50%;
+  background-color: rgba(238, 203, 203, 0.753);
+}
+
+.media_ps_info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-size: 16px;
+  margin-left: 10px;
+  justify-content: center;
+}
+
+.media_ps_name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.media_ps_owner {
+  margin-top: 2px;
+  height: 20px;
+  font-size: 14px;
+  color: lightgray;
+  overflow: hidden;
+}
+
+.media_ps_compact {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  border-radius: 0px;
+  padding: 1px 0 1px 10px;
+  margin: 2px 5px 0 5px;
+  &:hover {
+    background-color: rgba(211, 211, 211, 0.1);
+  }
+}
+
+.media_ps_compact_text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,28 @@
+.footer {
+  width: 100%;
+  // background-color: red;
+  // padding-top: 0px;
+  height: 100px;
+}
+
+.footer_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  hr {
+    // border: gray 1px solid;
+    border: none;
+    // outline: 1px solid gray;
+    box-shadow: 0 0 1px 0.2px gray;
+    width: 95%;
+  }
+}
+
+.footer_year {
+  color: gray;
+  font-size: 12px;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-right: 2.5%;
+}

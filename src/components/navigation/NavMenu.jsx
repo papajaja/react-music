@@ -4,7 +4,7 @@ import "../../icons/home.svg";
 
 const NavMenu = () => {
   return (
-    <div className="navmenu">
+    <nav className="navmenu">
       <div className="navsearchmenu">
         <Link to={"/"} className="navhome">
           <span />
@@ -16,7 +16,7 @@ const NavMenu = () => {
         </Link>
       </div>
       <Mediateka />
-    </div>
+    </nav>
   );
 };
 

@@ -1,0 +1,53 @@
+.player_mix_1,
+.player_mix_0 {
+  width: 35px;
+  height: 35px;
+  background: url("../../icons/player/mix.svg") center center no-repeat;
+  background-size: 100%;
+}
+
+.player_mix_1 {
+  filter: brightness(200%);
+}
+
+.player_prev {
+  width: 25px;
+  height: 25px;
+  background: url("../../icons/player/prev.svg") center center no-repeat;
+  background-size: 100%;
+  margin-right: 5px;
+}
+
+.player_next {
+  margin-left: 5px;
+  width: 25px;
+  height: 25px;
+  background: url("../../icons/player/next.svg") center center no-repeat;
+  background-size: 100%;
+}
+
+.player_repeat_0,
+.player_repeat_1 {
+  width: 35px;
+  height: 35px;
+  background: url("../../icons/player/repeat.svg") center center no-repeat;
+  background-size: 100%;
+}
+
+.player_repeat_1 {
+  filter: brightness(200%);
+}
+
+.player_play {
+  width: 40px;
+  height: 40px;
+  background: url("../../icons/player/play.svg") center center no-repeat;
+  background-size: 100%;
+}
+
+.player_pause {
+  width: 40px;
+  height: 40px;
+  background: url("../../icons/player/pause.svg") center center no-repeat;
+  background-size: 100%;
+}

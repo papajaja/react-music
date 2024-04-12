@@ -1,0 +1,117 @@
+.searchmenu {
+  // background-color: red;
+  width: 100%;
+  height: 100%;
+}
+
+.searchmenu_search {
+  box-shadow: 0 0 3px -1px lightgray;
+  // background-color: blue;
+  margin: 5px 0 5px 10px;
+  border-radius: 30px;
+  width: 400px;
+  height: 40px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  z-index: 150;
+  overflow: hidden;
+}
+
+.searchmenu_icon {
+  width: 40px;
+  height: 40px;
+  // background-color: red;
+
+  background: url("../../icons/search.svg") center center no-repeat;
+  background-size: 80%;
+}
+
+.searchmenu_input {
+  // margin-left: 60px;
+  margin-left: 5px;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  height: 80%;
+  color: lightgray;
+  font-size: 18px;
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+.searchmenu_results {
+  padding-top: $hb_height;
+  height: 100%;
+  width: 100%;
+}
+
+@mixin box {
+  padding: 20px 0 20px 0;
+  margin: 30px 20px 20px 20px;
+  box-shadow: 0 0 10px 1px rgba(128, 128, 128, 0.6);
+  border-radius: 10px;
+}
+
+@mixin title {
+  margin-left: 20px;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.searchmenu_albums {
+  @include box;
+}
+
+.searchmenu_albums_title {
+  @include title;
+}
+
+.searchmenu_artists {
+  @include box;
+}
+
+.searchmenu_artists_title {
+  @include title;
+}
+
+.searchmenu_tracks {
+  @include box;
+}
+
+.searchmenu_tracks_title {
+  @include title;
+}
+
+.searchmenu_playlists_cont {
+  @include box;
+}
+
+.loader_cont2 {
+  // background-color: red;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchmenu_playlists {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+
+.searchmenu_playlists_title {
+  @include title;
+}
+
+.search_noquery {
+  width: 100%;
+  height: 100%;
+  background: url("../../icons/search.svg") center center no-repeat;
+  background-size: 10%;
+  overflow: hidden;
+}

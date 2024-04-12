@@ -8,43 +8,30 @@
   flex-direction: column;
   background-color: $ctx_clr;
   overflow: hidden;
-  // max-width: 1500px;
 }
 
 .content {
   flex-grow: 1;
-  // padding: $pad_gin;
   display: flex;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
-.mainpage {
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  // max-height: 240px;
-  flex-wrap: wrap;
-  overflow: auto;
-  padding-top: $hb_height * 2;
-  // margin-top: $hb_height;
-}
-
-.mainmenucontainer {
+.mainpagecontainer {
   height: 100%;
-  width: 77vw;
+  width: calc(100vw - 300px);
   overflow: hidden;
   padding: $pad_gin;
   position: relative;
 }
 
-.mainmenu {
+.mainpage {
   background-color: $bg_clr;
   position: relative;
-  // width: 100vw;
+  width: 100%;
   height: 100%;
   border-radius: $bor_dius;
   color: white;
-  min-width: 400px;
   overflow: auto;
   display: flex;
   flex-direction: column;

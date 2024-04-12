@@ -1,0 +1,21 @@
+.myinput {
+  display: flex;
+}
+
+.myinput_track {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  border-radius: 15px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.myinput_thumb {
+  height: 100%;
+  border-radius: 15px;
+  // border-top-right-radius: 5px;
+  // border-bottom-right-radius: 5px;
+  background-color: blue;
+}

@@ -2,46 +2,77 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Tracks from "../track/Tracks";
 import SpotifyService from "../../services/SpotifyService";
+import { useFetching } from "../../hooks/useFetching";
+import { getStringEnding } from "../../utils/getStringEnding";
+import "simplebar-react/dist/simplebar.min.css";
+import SimpleBar from "simplebar-react";
+import { formatNums } from "../../utils/formatNums";
+import CurrentTrack from "../../store/CurrentTrack";
+import Queue from "../../store/Queue";
+import Footer from "../Footer";
 
-const PlaylistMenu = () => {
+const Playlist_Menu = () => {
   const paramsId = useParams().id;
-  const [playlist, setPlaylist] = useState({ description: null, followers: null, image: null, name: null, r: null, g: null, b: null, tracks: [] });
-
-  const fetchPlaylist = async () => {
+  const [playlist, setPlaylist] = useState({ data: null });
+  const [fetchPlaylist, isLoaded, error] = useFetching(async () => {
     const response = await SpotifyService.getPlaylist(paramsId);
-    const { description, followers, images, name, primary_color } = response;
-    const r = parseInt(primary_color.substring(1, 3), 16);
-    const g = parseInt(primary_color.substring(3, 5), 16);
-    const b = parseInt(primary_color.substring(5, 7), 16);
-    setPlaylist({ description: description, followers: followers.total, image: images[images.length - 1].url, name: name, r: r, g: g, b: b, tracks: response.tracks.items });
-  };
+    setPlaylist({ data: response });
+  });
 
-  const img = new Image();
-  img.src = playlist.image;
-  const imgData = img.src.data
+  const checkClickPlaylist = (e) => {
+    const tracks = document.querySelectorAll(".track");
+    tracks.forEach((track, key) => {
+      if (track.contains(e.target)) {
+        Queue.setQueue(playlist.data.tracks.items);
+      }
+    });
+  };
 
   useEffect(() => {
     fetchPlaylist();
-  }, []);
+    document.title = "Плейлист";
+  }, [paramsId]);
+
+  if (error) {
+    return <div className="error_menu">Ошибка при получении данных</div>;
+  }
+
+  if (!isLoaded) {
+    return (
+      <span className="loader_cont">
+        <span className="loader"></span>
+      </span>
+    );
+  }
+
+  let ps_info = "";
+  const owner = playlist.data.owner.display_name;
+  const likes = formatNums(playlist.data.followers.total);
+  const tracks_count = playlist.data.tracks.total;
+  ps_info = `${owner} | ${likes} лайк${getStringEnding(playlist.data.followers.total)} | ${tracks_count} трек${getStringEnding(tracks_count)}`;
 
   return (
-    <div className="playlistmenu">
-      {/* <div className="playlistbg" /> */}
-      <div style={{ background: `linear-gradient(to bottom, rgba(${playlist.r}, ${playlist.g}, ${playlist.b}, 0.3), transparent 95%)` }} className="playlistheader">
-        <div className="playlistpicture">
-          <img src={playlist.image} alt="" width="100%" />
+    <SimpleBar style={{ height: "100%" }}>
+      <div onClick={checkClickPlaylist} className="playlist_menu">
+        <div className="playlist_header">
+          <div className="playlist_picture">{playlist.data.images ? <img src={playlist.data.images[0].url} alt="" width="100%" /> : <div className="playlist_plug" />}</div>
+          <div className="playlist_info">
+            <h1 className="playlist_name">{playlist.data.name}</h1>
+            <div className="playlist_desc">{playlist.data.description}</div>
+            <div className="playlist_data">{ps_info}</div>
+          </div>
         </div>
-        <div className="playlistinfo">
-          <h1 className="playlisttitle">{playlist.name}</h1>
-          <div className="playlistdesc">{playlist.description}</div>
-          <div className="playlistlikes">{playlist.followers} followers</div>
-        </div>
+        {playlist.data.tracks.items.length > 0 ? (
+          <div className="playlist_tracks">
+            <Tracks tracks={playlist.data.tracks.items}></Tracks>
+          </div>
+        ) : (
+          <div className="playlist_empty">Треки не найдены</div>
+        )}
       </div>
-      <div className="playlisttracks">
-        <Tracks tracks={playlist.tracks}></Tracks>
-      </div>
-    </div>
+      <Footer></Footer>
+    </SimpleBar>
   );
 };
 
-export default PlaylistMenu;
+export default Playlist_Menu;

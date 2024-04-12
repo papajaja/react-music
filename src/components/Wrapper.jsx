@@ -11,12 +11,12 @@ const LayOut = observer(() => {
     <div className="wrapper">
       <div className="content">
         <NavMenu />
-        <div className="mainmenucontainer">
+        <section className="mainpagecontainer">
           <HeadBar></HeadBar>
-          <div className="mainmenu">
+          <div className="mainpage">
             <Outlet />
           </div>
-        </div>
+        </section>
       </div>
 
       {CurrentTrack.name ? <Player></Player> : null}

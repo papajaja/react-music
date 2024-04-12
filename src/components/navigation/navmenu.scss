@@ -1,12 +1,15 @@
 .navmenu {
   color: white;
-  width: 23vw;
+  width: 300px;
   display: flex;
   flex-direction: column;
   // background-color: red;
   padding: $pad_gin 0 $pad_gin $pad_gin;
   min-width: 200px;
+  overflow: hidden;
   height: 100%;
+  // background-color: red;
+  // background-image: linear-gradient(62deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
 }
 
 .navsearchmenu {
@@ -19,9 +22,11 @@
   box-shadow: $bg_shw;
   width: 100%;
   font-family: "Times New Roman", Times, serif;
+  // background-image: linear-gradient(90deg, #24243e 0%, #252058 50%, #24243e 100%);
+  background-color: $bg_clr;
 
   h1 {
-    font-size: 24px;
+    font-size: 20px;
     display: flex;
     align-items: center;
     color: lightgray;
@@ -40,8 +45,8 @@
   display: flex;
   span {
     background: url("../../icons/home.svg") center center no-repeat;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
   }
 }
 
@@ -49,7 +54,7 @@
   display: flex;
   span {
     background: url("../../icons//search.svg") center center no-repeat;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
   }
 }

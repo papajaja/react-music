@@ -2,7 +2,7 @@
 
 .albummenu {
   overflow: auto;
-  padding-top: $hb_height;
+  padding: $hb_height 20px 0 20px;
 }
 
 .albummenuview {
@@ -10,7 +10,7 @@
 }
 
 .albummenupicture {
-  margin: $hb_height 30px 10px 30px;
+  margin: 30px 30px 10px 30px;
   img {
     width: 150px;
     height: 150px;
@@ -32,13 +32,16 @@
 }
 
 .albummenuname {
-  font-size: 50px;
-  font-weight: 600;
-  margin-left: -4px;
+  font-size: 34px;
+  max-height: 95px;
+  width: 100%;
+  overflow-wrap: break-word;
+  overflow: hidden;
 }
 
 .albummenuartists {
   margin-bottom: 10px;
+  display: flex;
 }
 
 .albums {
@@ -46,17 +49,33 @@
   gap: 15px;
   max-width: 100%;
   flex-wrap: wrap;
-  margin-left: 40px;
 }
 .album {
   max-width: 150px;
   font-size: 14px;
   // color: white;
+  // background-color: red;
+  border-radius: 10px;
+  padding: 10px;
+  &:hover {
+    background-color: rgba(211, 211, 211, 0.3);
+  }
 }
 
 .albumpicture {
   overflow: hidden;
+  width: 130px;
+  height: 130px;
+  background-color: gray;
+  border-radius: 8px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .albumname {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

@@ -1,65 +1,74 @@
 .artistmenu {
   overflow: auto;
+  padding: $hb_height 20px 0 20px;
+}
+
+.artistmenusubscribe {
+  appearance: none;
+  background-color: transparent;
+  color: white;
+  // outline: 1px solid rgba(255, 255, 255, 0.39);
+  box-shadow: 0 0 10px 1px gray;
+  border-radius: 5px;
+  border: 0;
+  padding: 5px 8px 5px 8px;
+  // margin-left: 10px;
+  &:hover {
+    background-color: rgba(211, 211, 211, 0.2);
+  }
 }
 
 .artistmenuview {
   display: flex;
-  padding-top: $hb_height;
+  // padding: $hb_height 20px 0 20px;
 }
 
 .artistmenuinfo {
   width: 100%;
-  margin-top: 50px;
-  // margin-bottom: 20px;
+  margin-top: 30px;
+
   h1 {
     margin-bottom: 5px;
     font-size: 50px;
   }
-  button {
-    appearance: none;
-    background-color: transparent;
-    color: white;
-    outline: 1px solid rgba(255, 255, 255, 0.39);
-    border-radius: 6px;
-    border: 0;
-    padding: 3px;
-
-    margin-left: 10px;
-  }
 }
 
-.artistmenupopular {
-  margin-left: 20px;
-  margin-top: 30px;
-  h1 {
-    margin-bottom: 20px;
-    font-size: 22px;
-  }
+@mixin box {
+  padding: 20px 0 20px 0;
+  margin: 30px 20px 20px 20px;
+  border-radius: 10px;
 }
 
-.artistmenualbums {
-  margin-top: 30px;
-  > div {
-    margin-left: 25px;
-  }
-  h1 {
-    margin-left: 20px;
-    margin-bottom: 30px;
-    font-size: 22px;
-  }
+@mixin title {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.artistmenurelated {
-  margin-top: 30px;
-  margin-bottom: 100px;
-  > div {
-    margin-left: 25px;
-  }
-  h1 {
-    margin-left: 20px;
-    margin-bottom: 30px;
-    font-size: 22px;
-  }
+.artist_popular {
+  @include box;
+}
+
+.artist_popular_title {
+  @include title;
+}
+
+.artist_albums {
+  // background-color: green;
+  @include box;
+}
+
+.artist_albums_title {
+  @include title;
+}
+
+.artist_related {
+  @include box;
+}
+
+.artist_related_title {
+  @include title;
 }
 
 .artistmenufollowers {
@@ -68,10 +77,11 @@
 
 .artistmenupicture {
   img {
-    width: 200px;
-    height: 200px;
-    margin: $hb_height 30px 10px 30px;
-    border-radius: 50%;
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+    margin: 30px 30px 10px 30px;
+    border-radius: 3px;
   }
 }
 
@@ -80,22 +90,30 @@
   gap: 15px;
   max-width: 100%;
   flex-wrap: wrap;
-  margin-left: 40px;
 }
 
 .artist {
-  max-width: 150px;
   font-size: 14px;
-  // color: white;
+  width: 140px;
+  height: 190px;
+  padding: 10px;
+  border-radius: 10px;
+  &:hover {
+    background-color: rgba(211, 211, 211, 0.3);
+  }
 }
 
 .artistpicture {
-  width: 150px;
-  height: 150px;
-  // border-radius: 10px;
+  width: 120px;
+  height: 120px;
+  background-color: gray;
   border-radius: 50%;
   overflow: hidden;
 }
 
 .artistname {
+  font-size: 14px;
+  margin-top: 6px;
+  text-align: center;
+  margin-left: 2px;
 }

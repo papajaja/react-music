@@ -1,50 +1,93 @@
 @import "../variables.scss";
 
-.playlistmenu {
-  padding-top: $hb_height;
+.playlist_menu {
   width: 100%;
   display: flex;
   flex-direction: column;
   overflow: auto;
   color: white;
-  min-width: 400px;
-  // height: 100%;
+  padding: $hb_height 20px 0 20px;
 }
 
-.playlistheader {
+.playlist_header {
   display: flex;
-  flex-wrap: wrap;
-  // background-color: red;
 }
 
-.playlistpicture {
-  margin: $hb_height 30px 10px 30px;
+.playlist_picture {
+  margin: calc($hb_height / 2) 30px 10px 30px;
+  height: 150px;
+  width: 150px;
+  min-width: 150px;
+  border-radius: 10px;
+  overflow: hidden;
   img {
-    border-radius: 3px;
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
   }
 }
 
-.playlistinfo {
+.playlist_plug {
+  height: 100%;
+  width: 100%;
+  background: url("../../icons/note.svg") center center no-repeat;
+  background-size: 50%;
+  background-color: rgba(221, 217, 176, 0.815);
+}
+
+.playlist_info {
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   justify-content: end;
-  margin: 30px 0 30px 0;
-  // background-color: red;
-  // height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
-.playlisttitle {
-  font-size: 42px;
+.playlist_name {
+  font-size: 34px;
+  max-height: 95px;
+  width: 100%;
+  display: -moz-box;
+  display: -webkit-box;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -moz-line-clamp: 2;
+  -webkit-line-clamp: 2;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.playlistdesc {
+.playlist_desc {
   color: lightgray;
   font-size: 16px;
-  // font-weight: 100;
+  max-height: 45px;
+  margin-top: -2px;
+  display: -moz-box;
+  display: -webkit-box;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -moz-line-clamp: 2;
+  -webkit-line-clamp: 2;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.playlistauthor {
+.playlist_likes {
   font-size: 18px;
+}
+
+.playlist_data {
+  font-size: 14px;
+}
+
+.playlist_empty {
+  font-size: 26px;
+  // background-color: red;
+  display: flex;
+  color: lightgray;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 50px;
 }

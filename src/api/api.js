@@ -1,41 +1,51 @@
 import axios from "axios";
-var clientId = "419f99d845da4e6180b795dc9e3d2ab0";
-var clientSecret = "2c3902e16462472dbf3bf1e056705857";
-var baseUrl = "https://api.spotify.com/v1";
+const clientId = "419f99d845da4e6180b795dc9e3d2ab0";
+const baseUrl = "https://api.spotify.com/v1";
 
 const $api = axios.create({
   baseURL: baseUrl,
 });
 
 $api.interceptors.request.use((config) => {
-  config.headers.Authorization = `Bearer ${localStorage.getItem("token")}`;
+  config.headers.Authorization = `Bearer ${localStorage.getItem("access_token")}`;
   return config;
 });
 
 $api.interceptors.response.use(
   (config) => {
-    console.log("$api -> interceptors -> reponse -> success", config.data);
+    // console.log("$api -> interceptors -> reponse -> success", config.data);
     return config;
   },
   async (error) => {
+    console.warn("api -> interceptors -> response -> error", error.code, error.response.status, error.response.data.error);
     const originalRequest = error.config;
     if (error.response.status === 401) {
       try {
         console.warn("Token updating...");
+
+        const grant_type = "refresh_token";
+        const refresh_token = localStorage.getItem("refresh_token");
+
         const response = await axios.post(
           "https://accounts.spotify.com/api/token",
-          { grant_type: "client_credentials" },
+          { grant_type: grant_type, refresh_token: refresh_token, client_id: "419f99d845da4e6180b795dc9e3d2ab0" },
           {
-            headers: { Authorization: "Basic " + btoa(clientId + ":" + clientSecret), "Content-Type": "application/x-www-form-urlencoded" },
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
           }
         );
-        localStorage.setItem("token", response.data.access_token);
+
+        const access = response.data.access_token;
+        const refresh = response.data.refresh_token;
+
+        localStorage.setItem("access_token", access);
+        localStorage.setItem("refresh_token", refresh);
+
+        // console.log(access, refresh);
         return $api.request(originalRequest);
       } catch (error) {
         console.log("$api -> interceptors -> error", error);
       }
     }
-    console.warn("api -> interceptors -> response -> error", error.code, error.response.status, error.response.data.error);
   }
 );
 

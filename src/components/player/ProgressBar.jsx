@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import CurrentTrack from "../../store/CurrentTrack";
-import { observer } from "mobx-react-lite";
+import TrackService from "../../services/TrackService";
 
 const ProgressBar = () => {
   const [progress, setProgress] = useState(0);
@@ -8,7 +8,6 @@ const ProgressBar = () => {
   const handleEnter = (event) => {
     const progressTime = document.querySelector(".progressTime");
     progressTime.style.display = "flex";
-    // progressTime.style.marginLeft = "-100px";
     updateArea(event);
   };
 
@@ -58,6 +57,10 @@ const ProgressBar = () => {
   };
 
   const updateTime = () => {
+    if (CurrentTrack.audio.duration === CurrentTrack.audio.currentTime) {
+      CurrentTrack.audio.currentTime = 0;
+      TrackService.playNext();
+    }
     const percentage = (100 / CurrentTrack.audio.duration) * CurrentTrack.audio.currentTime;
     setProgress(percentage);
   };
@@ -67,7 +70,13 @@ const ProgressBar = () => {
   return (
     <>
       <div className="progressTime"></div>
-      <span onMouseMove={handleMove} onMouseEnter={handleEnter} onMouseOut={handleOut} onClick={handleClick} className="progressArea"></span>
+      <span
+        onMouseMove={handleMove}
+        onMouseEnter={handleEnter}
+        onMouseOut={handleOut}
+        onClick={handleClick}
+        className="progressArea"
+      ></span>
       <div className="progress">
         <div style={{ width: progress + "%" }} className="progressbar"></div>
       </div>

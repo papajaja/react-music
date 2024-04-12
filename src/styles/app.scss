@@ -4,11 +4,22 @@
 @import "../components/navigation/mediateka.scss";
 @import "../components/player/player.scss";
 @import "../components/playlist/playlist.scss";
-@import "../components/views/mainplaylist.scss";
+@import "../components/playlist/mainplaylist.scss";
 @import "../components/wrapper.scss";
 @import "../components/headbar.scss";
 @import "../components/navigation/navmenu.scss";
 @import "../components/player/progressbar.scss";
+@import "../components/views/login.scss";
+@import "../components/navigation/playlist.scss";
+@import "../components/views/mainmenu.scss";
+@import "../components/artistslist.scss";
+@import "../components/player/controls.scss";
+@import "../components/player/settings.scss";
+@import "../components/views/searchmenu.scss";
+@import "../components/views/queue.scss";
+@import "../components/slidewindow.scss";
+@import "../components/footer.scss";
+@import "../components/myinput.scss";
 
 * {
   box-sizing: border-box;
@@ -18,6 +29,9 @@
 }
 
 button {
+  border: 0;
+  background-color: transparent;
+  color: white;
   &:hover {
     cursor: pointer;
   }
@@ -26,4 +40,74 @@ button {
 a {
   text-decoration: none;
   color: white;
+}
+
+.error_menu {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.page_not_found {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-size: 40px;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  // background: url("../icons/404.svg") center center no-repeat;
+  background-size: 200px;
+}
+
+.loader_cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+}
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animloader 2s linear infinite;
+}
+.loader::after {
+  animation-delay: 1s;
+}
+
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+li {
+  list-style: none;
 }

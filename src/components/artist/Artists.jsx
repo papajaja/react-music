@@ -1,11 +1,14 @@
+import SlideWindow from "../SlideWindow";
 import Artist from "./Artist";
 
 const Artists = ({ artists }) => {
   return (
     <div className="artists">
-      {artists.map((artist, index) => (
-        <Artist key={index} artist={artist}></Artist>
-      ))}
+      <SlideWindow>
+        {artists.map((artist, index) => (
+          <Artist key={index} artist={artist}></Artist>
+        ))}
+      </SlideWindow>
     </div>
   );
 };

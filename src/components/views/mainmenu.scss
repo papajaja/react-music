@@ -1,0 +1,19 @@
+.mainmenu {
+  overflow: auto;
+
+  // padding: 20px 0 20px 0;
+  margin: calc($hb_height + 20px) 0 20px 0;
+}
+
+.mainmenu_title {
+  font-size: 18px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.mainmenu_playlists {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
