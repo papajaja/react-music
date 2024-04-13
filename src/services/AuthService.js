@@ -1,4 +1,5 @@
 import CurrentUser from "../store/CurrentUser";
+import crypto from "crypto";
 
 const url = "https://accounts.spotify.com/api/token";
 const clientId = "419f99d845da4e6180b795dc9e3d2ab0";
@@ -13,12 +14,10 @@ class AuthService {
     return codeVerifier;
   }
 
-  static async sha256(plain) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(plain);
-    const crypto = window.crypto.subtle;
-    console.log(`plain ${plain}, data ${data}, crypto ${crypto}`);
-    const digest = await crypto.digest("SHA-256", data);
+  static sha256(plain) {
+    const hash = crypto.createHash("sha256");
+    hash.update(plain);
+    const digest = hash.digest("hex");
     return digest;
   }
 
