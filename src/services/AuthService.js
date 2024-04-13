@@ -15,8 +15,10 @@ class AuthService {
 
   static async sha256(plain) {
     const encoder = new TextEncoder();
-    const data = encoder.encode(plain);
-    return window.crypto.subtle.digest("SHA-256", data);
+    const data = await encoder.encode(plain);
+    const crypto = await window.crypto.subtle;
+    const digest = await crypto.digest("SHA-256", data);
+    return digest;
   }
 
   static base64encode(input) {
