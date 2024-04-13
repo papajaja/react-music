@@ -2,7 +2,8 @@ import CurrentUser from "../store/CurrentUser";
 
 const url = "https://accounts.spotify.com/api/token";
 const clientId = "419f99d845da4e6180b795dc9e3d2ab0";
-const redirectUri = "https://stopify.ru/login";
+// const redirectUri = "https://stopify.ru/login";
+const redirectUri = "http://localhost:3000/login";
 
 class AuthService {
   static generateRandomString(length) {
@@ -13,19 +14,19 @@ class AuthService {
     return codeVerifier;
   }
 
-  static async sha256(plain) {
+  static sha256 = async (plain) => {
     const encoder = new TextEncoder();
     const data = encoder.encode(plain);
-    const crypto = window.crypto.subtle;
-    const digest = await crypto.digest("SHA-256", data);
-    return digest;
-  }
+    const result = await window.crypto.subtle.digest("SHA-256", data);
+    return result;
+  };
 
-  static base64encode(input) {
-    return btoa(String.fromCharCode(...new Uint8Array(input)))
+  static async base64encode(input) {
+    const result = btoa(String.fromCharCode(...new Uint8Array(input)))
       .replace(/=/g, "")
       .replace(/\+/g, "-")
       .replace(/\//g, "_");
+    return result;
   }
 
   static async getToken(code) {

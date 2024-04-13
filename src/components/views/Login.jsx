@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import AuthService from "../../services/AuthService";
 import CurrentUser from "../../store/CurrentUser";
-import SpotifyService from "../../services/SpotifyService";
-import { useFetching } from "../../hooks/useFetching";
-import { unstable_HistoryRouter } from "react-router-dom";
 
 const Login = () => {
   const [country, setCountry] = useState("");
@@ -38,8 +35,8 @@ const Login = () => {
 
   const logIn = async () => {
     const codeVerifier = AuthService.generateRandomString(64);
-    const hashed = AuthService.sha256(codeVerifier);
-    const codeChallenge = AuthService.base64encode(hashed);
+    const hashed = await AuthService.sha256(codeVerifier);
+    const codeChallenge = await AuthService.base64encode(hashed);
     AuthService.gotoAuth(codeChallenge);
   };
 
