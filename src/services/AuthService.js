@@ -1,9 +1,9 @@
 import CurrentUser from "../store/CurrentUser";
-import crypto from "crypto";
+import { SHA256 } from "crypto-js";
 
 const url = "https://accounts.spotify.com/api/token";
 const clientId = "419f99d845da4e6180b795dc9e3d2ab0";
-const redirectUri = "http://localhost:3000/login";
+const redirectUri = "http://45.12.75.100/login";
 
 class AuthService {
   static generateRandomString(length) {
@@ -15,9 +15,7 @@ class AuthService {
   }
 
   static sha256(plain) {
-    const hash = crypto.createHash("sha256");
-    hash.update(plain);
-    const digest = hash.digest("hex");
+    const digest = SHA256(plain).toString();
     return digest;
   }
 
