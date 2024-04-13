@@ -1,9 +1,8 @@
 import CurrentUser from "../store/CurrentUser";
-import { SHA256 } from "crypto-js";
 
 const url = "https://accounts.spotify.com/api/token";
 const clientId = "419f99d845da4e6180b795dc9e3d2ab0";
-const redirectUri = "http://45.12.75.100/login";
+const redirectUri = "https://stopify.ru";
 
 class AuthService {
   static generateRandomString(length) {
@@ -14,8 +13,11 @@ class AuthService {
     return codeVerifier;
   }
 
-  static sha256(plain) {
-    const digest = SHA256(plain).toString();
+  static async sha256(plain) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(plain);
+    const crypto = window.crypto.subtle;
+    const digest = await crypto.digest("SHA-256", data);
     return digest;
   }
 

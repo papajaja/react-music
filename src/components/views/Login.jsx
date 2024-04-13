@@ -38,7 +38,7 @@ const Login = () => {
 
   const logIn = async () => {
     const codeVerifier = AuthService.generateRandomString(64);
-    const hashed = await AuthService.sha256(codeVerifier);
+    const hashed = AuthService.sha256(codeVerifier);
     const codeChallenge = AuthService.base64encode(hashed);
     AuthService.gotoAuth(codeChallenge);
   };
@@ -61,9 +61,14 @@ const Login = () => {
           {/* <hr /> */}
           <ol className="logindesc">
             <li>Ваша страна: {country}</li>
-            <li>1. После нажатия по кнопке вы будете перенаправлены на страницу авторизации Spotify.</li>
+            <li>
+              1. После нажатия по кнопке вы будете перенаправлены на страницу авторизации Spotify.
+            </li>
             <li>2. Spotify недоступен в России (используйте VPN).</li>
-            <li>3. Некоторые функции музыкальной платформы недоступны из-за ограничений, установленных сервисом.</li>
+            <li>
+              3. Некоторые функции музыкальной платформы недоступны из-за ограничений, установленных
+              сервисом.
+            </li>
           </ol>
         </div>
       ) : (
