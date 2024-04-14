@@ -83,12 +83,18 @@ class TrackService {
     tracks.forEach((track, i) => {
       if (track.id === CurrentTrack.id) {
         neededIndex = i - 1;
+        if (neededIndex > -1) {
+          service.setTrack(tracks[neededIndex]);
+        }
+      } else if (track.track) {
+        if (track.track.id === CurrentTrack.id) {
+          neededIndex = i - 1;
+          if (neededIndex > -1) {
+            service.setTrack(tracks[neededIndex].track);
+          }
+        }
       }
     });
-
-    if (neededIndex !== null && neededIndex > -1 && tracks[neededIndex].id !== CurrentTrack.id) {
-      service.setTrack(tracks[neededIndex]);
-    }
   }
 }
 

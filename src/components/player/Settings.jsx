@@ -42,11 +42,11 @@ const Settings = () => {
           <div className="p_settings_vol_cont">
             <MyInput
               value={20}
-              height={7}
+              height={5}
               paddingX={0}
               paddingY={0}
-              thumbColor="green"
-              trackColor="lightgray"
+              thumbColor="lightgray"
+              trackColor="gray"
               width={60}
               onChange={(vol) => handleVolume(vol)}
             ></MyInput>
