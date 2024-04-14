@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import AuthService from "../../services/AuthService";
 import CurrentUser from "../../store/CurrentUser";
-import Pixels from "../Pixels";
+import Pixels from "./Pixels";
 
 const Login = () => {
   const [country, setCountry] = useState("");
