@@ -36,7 +36,7 @@ const HeadBar = observer(() => {
           {!error ? (
             isLoaded && (
               <div className="headbar_curr_user">
-                <div className="headbar_username">{CurrentUser.name || "none"}</div>
+                <div className="headbar_username">{CurrentUser.name || "no-user"}</div>
                 <div ref={btnRef} onClick={switchSettings} className="headbar_image">
                   {CurrentUser.image ? (
                     <img src={CurrentUser.image} alt="" />

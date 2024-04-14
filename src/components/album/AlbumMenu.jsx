@@ -29,7 +29,7 @@ const AlbumMenu = () => {
 
   useEffect(() => {
     fetchAlbum();
-    document.title = "Альбом";
+    document.title = "Stopify - Альбом";
   }, [id]);
 
   if (error) {

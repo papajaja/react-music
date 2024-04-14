@@ -17,7 +17,7 @@ const MainMenu = ({ children }) => {
 
   useEffect(() => {
     fetchPlaylists();
-    document.title = "Главная";
+    document.title = "Stopify - Главная";
   }, []);
 
   if (error) {
@@ -39,7 +39,13 @@ const MainMenu = ({ children }) => {
         <div className="mainmenu_playlists">
           <SlideWindow height={800}>
             {featuredPlaylists.map((playlist, index) => (
-              <Playlist key={index} image={playlist.images[0].url} name={playlist.name} desc={playlist.description} id={playlist.id}></Playlist>
+              <Playlist
+                key={index}
+                image={playlist.images[0].url}
+                name={playlist.name}
+                desc={playlist.description}
+                id={playlist.id}
+              ></Playlist>
             ))}
           </SlideWindow>
         </div>

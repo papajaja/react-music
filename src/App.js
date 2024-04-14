@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { observer } from "mobx-react";
 import PageNotFound from "./components/views/404";
-import Settings from "./components/views/Settings";
 import MainMenu from "./components/views/MainMenu";
 import PlayList from "./components/playlist/PlaylistMenu";
 import Wrapper from "./components/Wrapper";
@@ -23,7 +22,6 @@ const App = observer(() => {
           <Route path="playlist/:id" element={<PlayList />} />
           <Route path="artist/:id" element={<Artist />} />
           <Route path="album/:id" element={<Album />} />
-          <Route path="settings" element={<Settings />} />
           <Route path="queue" element={<Queue />} />
           <Route path="search" element={<SearchMenu />} />
           <Route path="*" element={<PageNotFound />} />

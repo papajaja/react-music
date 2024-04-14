@@ -21,7 +21,7 @@ const SearchMenu = () => {
     if (!query.value) setData(null);
     debouncedSearch(query.value);
   });
-  document.title = "Поиск";
+  document.title = "Stopify - Поиск";
 
   return (
     <div className="searchmenu">
@@ -30,7 +30,12 @@ const SearchMenu = () => {
         <input {...query} placeholder="Введите запрос" type="text" className="searchmenu_input" />
       </div>
       <SimpleBar style={{ height: "100%" }}>
-        <SearchResults query={query.value} isLoaded={isLoaded} data={data} error={error}></SearchResults>
+        <SearchResults
+          query={query.value}
+          isLoaded={isLoaded}
+          data={data}
+          error={error}
+        ></SearchResults>
         <Footer></Footer>
       </SimpleBar>
     </div>

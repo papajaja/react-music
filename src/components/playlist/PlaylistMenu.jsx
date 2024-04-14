@@ -30,7 +30,7 @@ const Playlist_Menu = () => {
 
   useEffect(() => {
     fetchPlaylist();
-    document.title = "Плейлист";
+    document.title = "Stopify - Плейлист";
   }, [paramsId]);
 
   if (error) {
@@ -49,13 +49,21 @@ const Playlist_Menu = () => {
   const owner = playlist.data.owner.display_name;
   const likes = formatNums(playlist.data.followers.total);
   const tracks_count = playlist.data.tracks.total;
-  ps_info = `${owner} | ${likes} лайк${getStringEnding(playlist.data.followers.total)} | ${tracks_count} трек${getStringEnding(tracks_count)}`;
+  ps_info = `${owner} | ${likes} лайк${getStringEnding(
+    playlist.data.followers.total
+  )} | ${tracks_count} трек${getStringEnding(tracks_count)}`;
 
   return (
     <SimpleBar style={{ height: "100%" }}>
       <div onClick={checkClickPlaylist} className="playlist_menu">
         <div className="playlist_header">
-          <div className="playlist_picture">{playlist.data.images ? <img src={playlist.data.images[0].url} alt="" width="100%" /> : <div className="playlist_plug" />}</div>
+          <div className="playlist_picture">
+            {playlist.data.images ? (
+              <img src={playlist.data.images[0].url} alt="" width="100%" />
+            ) : (
+              <div className="playlist_plug" />
+            )}
+          </div>
           <div className="playlist_info">
             <h1 className="playlist_name">{playlist.data.name}</h1>
             <div className="playlist_desc">{playlist.data.description}</div>

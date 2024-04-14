@@ -4,7 +4,7 @@ import Track from "../track/Track";
 import SimpleBar from "simplebar-react";
 
 const Queue = observer(() => {
-  document.title = "Очередь";
+  document.title = "Stopify - Очередь";
   console.log(Queue.tracks);
   return (
     <SimpleBar style={{ height: "100%" }}>

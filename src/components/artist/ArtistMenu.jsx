@@ -22,7 +22,9 @@ const ArtistMenu = () => {
     artistRelated: null,
   });
   const [fetchData, isLoaded, error] = useFetching(async () => {
-    const { artist, artistAlbums, artistPopular, artistRelated } = await SpotifyService.getArtist(id);
+    const { artist, artistAlbums, artistPopular, artistRelated } = await SpotifyService.getArtist(
+      id
+    );
     setData({
       artistName: artist.data.name,
       artistFollowers: artist.data.followers.total,
@@ -45,7 +47,7 @@ const ArtistMenu = () => {
 
   useEffect(() => {
     fetchData();
-    document.title = "Артист";
+    document.title = "Stopify - Артист";
   }, [id]);
 
   if (error) {
@@ -78,7 +80,11 @@ const ArtistMenu = () => {
         <div className="artistmenumedia">
           <div onClick={checkClickArtist} className="artist_popular">
             <h1 className="artist_popular_title">Популярные треки</h1>
-            {data.artistPopular.length ? data.artistPopular.map((track, i) => <Track key={i} index={i} track={track}></Track>) : <div>--- no tracks ---</div>}
+            {data.artistPopular.length ? (
+              data.artistPopular.map((track, i) => <Track key={i} index={i} track={track}></Track>)
+            ) : (
+              <div>--- no tracks ---</div>
+            )}
           </div>
           <div className="artist_albums">
             <h1 className="artist_albums_title">Популярные релизы</h1>
