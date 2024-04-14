@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import AuthService from "../../services/AuthService";
 import CurrentUser from "../../store/CurrentUser";
-import Pixels from "./Pixels";
+import LoginBackground from "./LoginBackground";
 
 const Login = () => {
   const [country, setCountry] = useState("");
@@ -48,7 +48,7 @@ const Login = () => {
     <div className="loginpage">
       {loaded ? (
         <>
-          <Pixels></Pixels>
+          <LoginBackground></LoginBackground>
           <div className="loginmenu">
             <div className="loginform">
               <button onClick={logIn} className="loginbutton">
